@@ -1,24 +1,24 @@
-package com.javaex.ex02;
+package com.javaex.ex03;
 
 import java.util.Arrays;
 
-public class MyList {
-
+public class MyList<T> {
+	
 	// 필드
-	private Object[] oArray;
+	private T[] oArray;
 	private int crtPos;
 	
 	//생성자
 	public MyList() {
 		// 원래만들지않음 편의상 가정
-		oArray = new Object[3];
+		oArray = (T[])new Object[3];
 		crtPos = 0;
 	}
 	
 	// 메소드 gs
 	
 	// 매소드 일반
-	public void add(Object o) {
+	public void add(T o) {
 		// 현재배열개수+1 배열을 새로 만든다
 		// 이전배열의 값을 새배열에 옮긴다
 		// 마지막방에 새주소를 추가한다
@@ -32,7 +32,7 @@ public class MyList {
 		return crtPos;
 	}
 	
-	public Object get(int index) {
+	public T get(int index) {
 
 		return oArray[index];
 	}
